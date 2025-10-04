@@ -35,7 +35,7 @@ public class App {
         
         var scanner = new Scanner(System.in);
         var repositoryDiarista = new DiaristaRepository();
-        var repositorClient = new ClienteRepository();
+        var repositoryCliente = new ClienteRepository();
 
         var opcao = "q";
         do { 
@@ -50,12 +50,12 @@ public class App {
                 case "3" -> FuncoesDiarista.buscarDiarista(scanner, repositoryDiarista);
                 case "4" -> FuncoesDiarista.excluirDiarista(scanner, repositoryDiarista);   
 
-                case "5" -> FuncoesCliente.listarClientes(repositorClient);
-                case "6" -> FuncoesCliente.cadastrarCliente(scanner, repositorClient);
-                case "7" -> FuncoesCliente.buscarCliente(scanner, repositorClient);
-                case "8" -> FuncoesCliente.excluirCliente(scanner, repositorClient);
+                case "5" -> FuncoesCliente.listarClientes(repositoryCliente);
+                case "6" -> FuncoesCliente.cadastrarCliente(scanner, repositoryCliente);
+                case "7" -> FuncoesCliente.buscarCliente(scanner, repositoryCliente);
+                case "8" -> FuncoesCliente.excluirCliente(scanner, repositoryCliente);
 
-                case "9" ->listarDiaristas_Clientes(repositoryDiarista, repositorClient);
+                case "9" ->listarDiaristas_Clientes(repositoryDiarista, repositoryCliente);
                 
                 case "10" -> limparConsole();
                 case "q" -> System.out.println("Saindo do sistema.\n");
@@ -88,11 +88,11 @@ public class App {
         System.out.println("===========================");
     }
 
-    public static void listarDiaristas_Clientes(DiaristaRepository repositoryDiarista, ClienteRepository clienteRepository) {
+    public static void listarDiaristas_Clientes(DiaristaRepository repositoryDiarista, ClienteRepository repositoryCliente) {
         limparConsole();
         
         var diaristas = repositoryDiarista.buscarTodos();
-        var clientes = clienteRepository.buscarTodos();
+        var clientes = repositoryCliente.buscarTodos();
 
         if (clientes.isEmpty()) {
             System.out.println("Não há clientes cadastradas no momento.");
