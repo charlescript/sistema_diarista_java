@@ -4,6 +4,16 @@ import java.util.List;
 import java.util.ArrayList;
 import br.com.treino.semana2.models.Cliente;
 
+/**
+ * Repositório em memória para gerenciar entidades do tipo {@link Cliente}.
+ * Implementa as operações básicas de CRUD definidas pela interface {@link IRepository}.
+ * 
+ * <p>
+ * Os clientes são armazenados em uma lista interna e os IDs são gerados automaticamente.
+ * </p>
+ *
+ * @author Charles Rocha
+ */
 public class ClienteRepository implements IRepository<Cliente, Long> {
 
     private List <Cliente> clientes;

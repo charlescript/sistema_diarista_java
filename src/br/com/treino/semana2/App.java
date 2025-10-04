@@ -10,6 +10,26 @@ import br.com.treino.semana2.funcoes.FuncoesDiarista;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Classe principal do sistema de gerenciamento de Diaristas e Clientes.
+ * 
+ * Esta aplicação permite ao usuário listar, cadastrar, buscar e excluir diaristas e clientes,
+ * além de exibir todos os registros cadastrados. O menu principal é exibido em loop até que o
+ * usuário escolha sair do sistema.
+ * 
+ * Funcionalidades disponíveis:
+ * <ul>
+ *   <li>Listar, cadastrar, buscar e excluir diaristas</li>
+ *   <li>Listar, cadastrar, buscar e excluir clientes</li>
+ *   <li>Listar todos os diaristas e clientes</li>
+ *   <li>Limpar o console</li>
+ *   <li>Sair do sistema</li>
+ * </ul>
+ * 
+ * O sistema utiliza repositórios para manipulação dos dados de diaristas e clientes.
+ * 
+ * @author Charles Rocha
+ */
 public class App {
     public static void main(String[] args) {
         
